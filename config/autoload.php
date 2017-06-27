@@ -5,7 +5,8 @@ $autoloader_paths_to_load = ['app/classes',
                              'app/helpers',
                              'app/models',
                              'app/polices',
-                             'lib'];
+                             'lib',
+                             'tests/factories'];
 
 include 'vendor/boooklet/framework/src/Autoloader.php';
 foreach ($autoloader_paths_to_load as $path) {

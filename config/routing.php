@@ -11,6 +11,8 @@ $router->setBasePath('');
 // $router->map('PUT','/clients/[i:id]', 'ClientsController#update', 'update_client_path');
 
 $router->map('GET','/', 'StaticPagesController#start', 'root_path');
+$router->map('GET','/regulamin', 'StaticPagesController#regulamin', 'regulamin_path');
+
 Config::set('router', $router);
 
 $method = $_SERVER['REQUEST_METHOD'];

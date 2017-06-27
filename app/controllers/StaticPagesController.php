@@ -5,4 +5,9 @@ class StaticPagesController extends ApplicationController
     {
         return $this->render();
     }
+
+    public function regulamin()
+    {
+        return $this->render();
+    }
 }

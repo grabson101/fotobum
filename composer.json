@@ -11,6 +11,7 @@
   ],
   "require": {
     "boooklet/framework": "dev-master",
-    "boooklet/tester": "dev-master"
+    "boooklet/tester": "dev-master",
+    "sunra/php-simple-html-dom-parser": "1.5.2"
   }
 }
