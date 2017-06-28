@@ -12,7 +12,10 @@ $router->setBasePath('');
 
 $router->map('GET','/', 'StaticPagesController#start', 'root_path');
 $router->map('GET','/regulamin', 'StaticPagesController#regulamin', 'regulamin_path');
-$router->map('GET','/panel/product_categories', 'ProductCategoriesController#index', 'product_categories_path');
+
+$router->map('GET','/panel/product-categories', 'ProductCategoriesController#index', 'product_categories_path');
+$router->map('GET','/panel/product-categories/new', 'ProductCategoriesController#new', 'product_categories_new_path');
+$router->map('POST','/panel/product-categories', 'ProductCategoriesController#create', 'product_categories_create_path');
 
 
 Config::set('router', $router);

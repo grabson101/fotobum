@@ -2,6 +2,8 @@
 // Autoloader
 // =============================================================================
 include_once 'config/autoload.php';
+include_once 'lib/loggerRequest.php';
+
 
 try {
     // Application setup
@@ -12,12 +14,17 @@ try {
     // =========================================================================
     include_once 'config/routing.php';
 
+
+
     if (!$match) {
         echo Response::raiseError(404, ['Resource not found.']);
         die();
     }
 
-    
+    $headers = new Headers;
+    if ($headers->isTesterTestRequest()) {
+      Config::set('env', 'test');
+    }
      $db_setup = 'db_'.Config::get('env');
      MyDB::connect(Config::get($db_setup));
 
@@ -36,6 +43,8 @@ try {
         $body = $controller->$action_name();
 
         echo $body;
+
+
     }
 } catch (Throwable $t) {
     if ($t->getCode() != 0) {
@@ -46,3 +55,4 @@ try {
 
     echo Response::raiseError($error_code, [$t->getMessage()]);
 }
+include_once 'lib/loggerResponse.php';
