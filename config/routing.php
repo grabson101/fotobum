@@ -12,6 +12,8 @@ $router->setBasePath('');
 
 $router->map('GET','/', 'StaticPagesController#start', 'root_path');
 $router->map('GET','/regulamin', 'StaticPagesController#regulamin', 'regulamin_path');
+$router->map('GET','/panel/product_categories', 'ProductCategoriesController#index', 'product_categories_path');
+
 
 Config::set('router', $router);
 

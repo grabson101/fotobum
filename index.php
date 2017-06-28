@@ -17,10 +17,9 @@ try {
         die();
     }
 
-    // Connect to mysql database
-    // TODO
-    // $db_setup = 'db_'.Config::get('env');
-    // MyDB::connect(Config::get($db_setup));
+    
+     $db_setup = 'db_'.Config::get('env');
+     MyDB::connect(Config::get($db_setup));
 
     // Run Controller#action
     if ($match) {
