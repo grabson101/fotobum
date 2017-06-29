@@ -5,7 +5,7 @@
 <?php else:?>
   <?php foreach ($product_categories as $product_category) { ?>
     <div class="product-category">
-      <?= $product_category->name ?>
+      <a href="<?= Config::get('router')->generate('product_categories_show_path', ['id'=>$product_category->id])?>"> <?= $product_category->name ?> </a>
     </div>
   <? } ?>
 <?php endif; ?>

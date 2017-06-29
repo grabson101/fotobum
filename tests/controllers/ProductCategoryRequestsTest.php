@@ -46,6 +46,12 @@ class ProductCategoryRequestsTest extends TesterCase
         $token = null;
         $response = $this->request('GET', Config::get('web_address').'/panel/product-categories/1/show', $token);
 
+        $dom = HtmlDomParser::str_get_html($response->body);
+        $product_category_name = $dom->find('.name');
+        $product_category_description = $dom->find('.description');
 
+        Assert::expect($product_category_name)->to_equal("Test");
+        Assert::expect($product_category_description)->to_equal("jakis opis");
+        Assert::expect($response->http_code)->to_equal(200);
     }
 }

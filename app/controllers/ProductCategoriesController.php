@@ -22,4 +22,17 @@ class ProductCategoriesController extends ApplicationController
         return header("Location: ". Config::get('web_address').'/panel/product-categories');
       }
     }
+
+    public function show()
+    {
+        $product_category = $this->product_category();
+
+        return $this->render(['product_category' => $product_category]);
+    }
+
+
+    private function product_category()
+    {
+        return ProductCategory::find($this->params['id']);
+    }
 }
