@@ -15,9 +15,9 @@ try {
     include_once 'config/routing.php';
 
 
-
     if (!$match) {
-        echo Response::raiseError(404, ['Resource not found.']);
+        echo $e = Response::raiseError(404, ['Resource not found.']);
+        include_once 'lib/loggerResponse.php';
         die();
     }
 
@@ -43,9 +43,10 @@ try {
         $body = $controller->$action_name();
 
         echo $body;
-
+        include_once 'lib/loggerResponse.php';
 
     }
+
 } catch (Throwable $t) {
     if ($t->getCode() != 0) {
         $error_code = $t->getCode();

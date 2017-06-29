@@ -39,4 +39,13 @@ class ProductCategoryRequestsTest extends TesterCase
         Assert::expect(count($product_categories_elements))->to_equal(1);
         Assert::expect($response->http_code)->to_equal(200);
     }
+
+    public function testShow()
+    {
+        ProductCategoryFactory::populateProductCategoryTable();
+        $token = null;
+        $response = $this->request('GET', Config::get('web_address').'/panel/product-categories/1/show', $token);
+
+
+    }
 }
