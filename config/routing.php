@@ -19,6 +19,7 @@ $router->map('POST','/panel/product-categories', 'ProductCategoriesController#cr
 $router->map('GET','/panel/product-categories/[i:id]', 'ProductCategoriesController#show', 'show_product_categories_path');
 $router->map('GET','/panel/product-categories/[i:id]/edit', 'ProductCategoriesController#edit', 'edit_product_categories_path');
 $router->map('PUT','/panel/product-categories/[i:id]', 'ProductCategoriesController#update', 'update_product_categories_path');
+$router->map('DELETE','/panel/product-categories/[i:id]', 'ProductCategoriesController#delete', 'delete_product_categories_path');
 
 
 Config::set('router', $router);
