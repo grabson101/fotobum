@@ -10,7 +10,8 @@ class ProductCategoriesController extends ApplicationController
 
     public function new()
     {
-        return $this->render();
+        $product_category = new ProductCategory();
+        return $this->render(['product_category' => $product_category]);
     }
 
     public function create()
@@ -30,6 +31,21 @@ class ProductCategoriesController extends ApplicationController
         return $this->render(['product_category' => $product_category]);
     }
 
+    public function edit()
+    {
+        $product_category = $this->product_category();
+
+        return $this->render(['product_category' => $product_category]);
+    }
+
+    public function update()
+    {
+        $product_category = $this->product_category();
+
+        if ($product_category->update($this->params['product_category'])) {
+            return header("Location: ". Config::get('web_address').'/panel/product-categories');
+        } 
+    }
 
     private function product_category()
     {

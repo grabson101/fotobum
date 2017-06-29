@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boooklet/framework.git",
-                "reference": "562d03d818c2491fdb57e6efe311c757a05e98c9"
+                "reference": "872d1e3de23bef0e41240f06baf316ad1c51fddf"
             },
             "require": {
                 "boooklet/tester": "dev-master"
@@ -24,7 +24,7 @@
                     "lib"
                 ]
             },
-            "time": "2017-06-19 07:33:11"
+            "time": "2017-06-29 10:20:51"
         },
         {
             "name": "boooklet/tester",
