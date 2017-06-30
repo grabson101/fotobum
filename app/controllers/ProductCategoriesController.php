@@ -23,7 +23,8 @@ class ProductCategoriesController extends ApplicationController
         return header("Location: ". Config::get('web_address').'/panel/product-categories');
       }
       else{
-        return header("Location: ". Config::get('web_address').$this->params['return_path']);
+        $this->params['action'] = 'new';
+        return $this->render(['product_category' => $product_category]);
       }
     }
 
@@ -49,7 +50,8 @@ class ProductCategoriesController extends ApplicationController
             return header("Location: ". Config::get('web_address').'/panel/product-categories');
         }
         else{
-          return header("Location: ". Config::get('web_address').$this->params['return_path']);
+          $this->params['action'] = 'edit';
+          return $this->render(['product_category' => $product_category]);
         }
     }
 
