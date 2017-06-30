@@ -13,6 +13,7 @@
     "boooklet/framework": "dev-master",
     "boooklet/tester": "dev-master",
     "sunra/php-simple-html-dom-parser": "1.5.2",
-    "fabpot/goutte":"dev-master"
+    "fabpot/goutte":"dev-master",
+    "twbs/bootstrap": "^3.3"
   }
 }

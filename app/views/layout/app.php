@@ -9,6 +9,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <?php # include 'app/views/shared/_stylesheet.php'; ?>
     <?php # include 'app/views/shared/_javascript.php'; ?>
+    <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body data-env="<?= Config::get('env') ?>">
     <?php
