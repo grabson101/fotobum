@@ -44,7 +44,16 @@ class ProductCategoriesController extends ApplicationController
 
         if ($product_category->update($this->params['product_category'])) {
             return header("Location: ". Config::get('web_address').'/panel/product-categories');
-        } 
+        }
+    }
+
+    public function delete()
+    {
+        $product_category = $this->product_category();
+        if($product_category->destroy())
+        {
+          return header("Location: ". Config::get('web_address').'/panel/product-categories');
+        }
     }
 
     private function product_category()
