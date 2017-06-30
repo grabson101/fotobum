@@ -20,11 +20,12 @@ class ProductCategoriesController extends ApplicationController
 
       if($product_category->save())
       {
+        http_response_code(201);
         return header("Location: ". Config::get('web_address').'/panel/product-categories');
       }
       else{
-        $this->params['action'] = 'new';
-        return $this->render(['product_category' => $product_category]);
+        http_response_code(422);
+        return $this->render(['product_category' => $product_category],['path'=> 'app/views/product_categories/new.php']);
       }
     }
 
@@ -47,9 +48,11 @@ class ProductCategoriesController extends ApplicationController
         $product_category = $this->product_category();
 
         if ($product_category->update($this->params['product_category'])) {
+            http_response_code(202);
             return header("Location: ". Config::get('web_address').'/panel/product-categories');
         }
         else{
+          http_response_code(422);
           $this->params['action'] = 'edit';
           return $this->render(['product_category' => $product_category]);
         }
