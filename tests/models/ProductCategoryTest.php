@@ -21,7 +21,7 @@
         $product_category = ProductCategoryFactory::productCategory();
         Assert::expect($product_category->isValid())->to_equal(true);
 
-        $product_category = ProductCategoryFactory::productCategory(['status'=> 'inactive']);
+        $product_category = ProductCategoryFactory::productCategory(['status'=> 'active']);
         Assert::expect($product_category->isValid())->to_equal(true);
 
         $product_category = ProductCategoryFactory::productCategory(['status'=> 'qwerty']);
