@@ -22,6 +22,9 @@ class ProductCategoriesController extends ApplicationController
       {
         return header("Location: ". Config::get('web_address').'/panel/product-categories');
       }
+      else{
+        return header("Location: ". Config::get('web_address').$this->params['return_path']);
+      }
     }
 
     public function show()
@@ -45,6 +48,9 @@ class ProductCategoriesController extends ApplicationController
         if ($product_category->update($this->params['product_category'])) {
             return header("Location: ". Config::get('web_address').'/panel/product-categories');
         }
+        else{
+          return header("Location: ". Config::get('web_address').$this->params['return_path']);
+        }
     }
 
     public function delete()
@@ -53,6 +59,9 @@ class ProductCategoriesController extends ApplicationController
         if($product_category->destroy())
         {
           return header("Location: ". Config::get('web_address').'/panel/product-categories');
+        }
+        else{
+          return header("Location: ". Config::get('web_address').$this->params['return_path']);
         }
     }
 
