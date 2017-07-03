@@ -16,7 +16,6 @@ $router->map('GET','/regulamin', 'StaticPagesController#regulamin', 'regulamin_p
 $router->map('GET','/panel/product-categories', 'ProductCategoriesController#index', 'product_categories_path');
 $router->map('GET','/panel/product-categories/new', 'ProductCategoriesController#new', 'new_product_categories_path');
 $router->map('POST','/panel/product-categories', 'ProductCategoriesController#create', 'create_product_categories_path');
-$router->map('GET','/panel/product-categories/[i:id]', 'ProductCategoriesController#show', 'show_product_categories_path');
 $router->map('GET','/panel/product-categories/[i:id]/edit', 'ProductCategoriesController#edit', 'edit_product_categories_path');
 $router->map('PUT','/panel/product-categories/[i:id]', 'ProductCategoriesController#update', 'update_product_categories_path');
 $router->map('DELETE','/panel/product-categories/[i:id]', 'ProductCategoriesController#delete', 'delete_product_categories_path');

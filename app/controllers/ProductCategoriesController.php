@@ -29,13 +29,6 @@ class ProductCategoriesController extends ApplicationController
       }
     }
 
-    public function show()
-    {
-        $product_category = $this->product_category();
-
-        return $this->render(['product_category' => $product_category]);
-    }
-
     public function edit()
     {
         $product_category = $this->product_category();
