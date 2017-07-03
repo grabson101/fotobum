@@ -9,14 +9,14 @@ class ProductCategoryImage extends Model
           'cover'               => ['type' => 'string', 'default' => 'false', 'validations'=>['required', 'in:true,false']],
           'product_category_id' => ['type' => 'integer', 'validations'=>['required']],
           'created_at'          => ['type' => 'datetime'],
-          'updated_at'           => ['type' => 'datetime'],
+          'updated_at'          => ['type' => 'datetime'],
       ];
   }
 
   public static function relations()
   {
       return [
-          'product_category'        => ['relation' => 'belongs_to', 'class' => 'ProductCategory'],
+          'product_category'    => ['relation' => 'belongs_to', 'class' => 'ProductCategory'],
       ];
   }
 

@@ -31,13 +31,13 @@ class ProductCategory extends Model
 
   public function setCoverImage($image_id)
   {
-    $cover_image = ProductImageCategory::find($image_id);
-    $cover_image->cover = 'true';
-    $cover_image->save();
+      $cover_image = ProductCategoryImage::find($image_id);
+      $cover_image->cover = 'true';
+      $cover_image->save();
   }
 
   public function getCoverImage()
   {
-      return ProductImageCategory::where("product_category_id = ? AND cover = true", ['product_category_id' => $this->id]);
+      return ProductCategoryImage::where("`product_category_id` = ? AND `cover` = 'true'", ['product_category_id' => $this->id])[0];
   }
 }
