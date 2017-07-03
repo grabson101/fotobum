@@ -12,7 +12,7 @@ class ProductCategoryImageFactory
 
     public static function populateProductCategoryImageTable()
     {
-        $image1 = self::productCategoryImage(['order' => 1, 'product_category_id' => 1, 'cover' => 'true']);
+        $image1 = self::productCategoryImage(['order' => 1, 'product_category_id' => 1, 'cover' => 1]);
         $image1->save();
         $image2 = self::productCategoryImage(['order' => 2, 'product_category_id' => 1]);
         $image2->save();

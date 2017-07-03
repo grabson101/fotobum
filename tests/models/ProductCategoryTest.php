@@ -35,14 +35,14 @@
           $product_category->save();
           $product_category_images = ProductCategoryImageFactory::populateProductCategoryImageTable();
 
-          Assert::expect($product_category->images()[0]->cover)->to_equal('true');
-          Assert::expect($product_category->images()[1]->cover)->to_equal('false');
-          Assert::expect($product_category->images()[2]->cover)->to_equal('false');
+          Assert::expect($product_category->images()[0]->cover)->to_equal(1);
+          Assert::expect($product_category->images()[1]->cover)->to_equal(0);
+          Assert::expect($product_category->images()[2]->cover)->to_equal(0);
 
           $product_category->changeCoverImage(3);
 
-          Assert::expect($product_category->images()[2]->cover)->to_equal('true');
-          Assert::expect($product_category->images()[0]->cover)->to_equal('false');
-          Assert::expect($product_category->images()[1]->cover)->to_equal('false');
+          Assert::expect($product_category->images()[2]->cover)->to_equal(1);
+          Assert::expect($product_category->images()[0]->cover)->to_equal(0);
+          Assert::expect($product_category->images()[1]->cover)->to_equal(0);
       }
   }

@@ -6,7 +6,7 @@ class ProductCategoryImage extends Model
       return [
           'id'                  => ['type' => 'integer'],
           'order'               => ['type' => 'integer', 'validations'=>['required']],
-          'cover'               => ['type' => 'string', 'default' => 'false', 'validations'=>['required', 'in:true,false']],
+          'cover'               => ['type' => 'boolean', 'default' => 0, 'validations'=>['required', 'in:1,0']],
           'product_category_id' => ['type' => 'integer', 'validations'=>['required']],
           'created_at'          => ['type' => 'datetime'],
           'updated_at'          => ['type' => 'datetime'],

@@ -21,7 +21,7 @@
         $product_category_image = ProductCategoryImageFactory::productCategoryImage();
         Assert::expect($product_category_image->isValid())->to_equal(true);
 
-        $product_category_image = ProductCategoryImageFactory::productCategoryImage(['cover' => 'false']);
+        $product_category_image = ProductCategoryImageFactory::productCategoryImage(['cover' => 0]);
         Assert::expect($product_category_image->isValid())->to_equal(true);
 
 

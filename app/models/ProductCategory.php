@@ -23,7 +23,7 @@ class ProductCategory extends Model
   public function changeCoverImage ($image_id)
   {
       $old_cover_image = $this->getCoverImage();
-      $old_cover_image->cover = 'false';
+      $old_cover_image->cover = 0;
       $old_cover_image->save();
 
       $this->setCoverImage($image_id);
@@ -32,12 +32,12 @@ class ProductCategory extends Model
   public function setCoverImage($image_id)
   {
       $cover_image = ProductCategoryImage::find($image_id);
-      $cover_image->cover = 'true';
+      $cover_image->cover = 1;
       $cover_image->save();
   }
 
   public function getCoverImage()
   {
-      return ProductCategoryImage::where("`product_category_id` = ? AND `cover` = 'true'", ['product_category_id' => $this->id])[0];
+      return ProductCategoryImage::where("`product_category_id` = ? AND `cover` = 1", ['product_category_id' => $this->id])[0];
   }
 }
