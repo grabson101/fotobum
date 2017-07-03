@@ -15,7 +15,7 @@ class CreateProductImagesTable
         return $query;
     }
     public function down() {
-      $query = "DROP TABLE `product_categories`";
+      $query = "DROP TABLE `product_images`";
       return $query;
     }
 }

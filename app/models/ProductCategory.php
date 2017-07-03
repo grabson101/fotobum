@@ -12,4 +12,16 @@ class ProductCategory extends Model
           'updated_at'      => ['type' => 'datetime'],
       ];
   }
+
+  public static function relations()
+  {
+      return [
+          'images'        => ['relation' => 'has_many', 'class' => 'ProductCategoryImage'],
+      ];
+  }
+
+  public function changeCoverImage ($product_image_id)
+  {
+      $images = $this->images();
+  }
 }
