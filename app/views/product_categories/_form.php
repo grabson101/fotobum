@@ -7,7 +7,11 @@
      <label for="description">Opis:</label>
      <input type="text" class="form-control" id="description" name="product_category[description]" value="<?= FormHelper::inputValue($product_category, 'description') ?>" placeholder="Opis"><br><br>
    </div>
-   <input type="radio" name="product_category[status]" value="active" <?= FormHelper::radioTagSet($product_category, 'status', 'active') ?>> Active<br>
-   <input type="radio" name="product_category[status]" value="inactive" <?= FormHelper::radioTagSet($product_category, 'status', 'inactive') ?>> Inactive<br>
-   <input type="submit" class="submit" value="Wyślij">
+   <div class="radio">
+     <label><input type="radio" name="product_category[status]" value="active" <?= FormHelper::radioTagSet($product_category, 'status', 'active') ?> >Active</label>
+   </div>
+   <div class="radio">
+     <label><input type="radio" name="product_category[status]" value="inactive" <?= FormHelper::radioTagSet($product_category, 'status', 'inactive') ?> >Inactive</label>
+   </div>
+   <button type="submit" class="btn btn-primary submit">Wyślij</button>
   </form>
