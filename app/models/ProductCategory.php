@@ -26,7 +26,7 @@ class ProductCategory extends Model
       $old_cover_image->cover = 'false';
       $old_cover_image->save();
 
-      self::setCoverImage($image_id);
+      $this->setCoverImage($image_id);
   }
 
   public function setCoverImage($image_id)
