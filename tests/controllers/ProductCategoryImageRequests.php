@@ -4,7 +4,7 @@ use Goutte\Client;
 
 class ProductCategoryImageRequestsTest extends TesterCase
 {
-  public function FunctionName($value='')
+  public function FunctionName()
   {
       ProductCategoryFactory::populateProductCategoryTable();
 
@@ -16,7 +16,7 @@ class ProductCategoryImageRequestsTest extends TesterCase
       $crawler = $client->click($crawler->filter('.update')->link());
 
       // Assert::expect($crawler->getUri())->to_include_string("/panel/product-categories/1");
-      Assert::expect(count($crawler->filter('.image')->extract()))->to_equal(count(ProductCategory::find(1)->images()));
+      Assert::expect(count(1))->to_equal(count(ProductCategory::find(1)->images()));
 
 
   }

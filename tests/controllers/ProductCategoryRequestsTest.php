@@ -70,24 +70,6 @@ class ProductCategoryRequestsTest extends TesterCase
 
     }
 
-    public function testShow()
-    {
-        ProductCategoryFactory::populateProductCategoryTable();
-        $token = null;
-        $response = $this->request('GET', Config::get('web_address').'/panel/product-categories/1', $token);
-
-        $dom = HtmlDomParser::str_get_html($response->body);
-        $product_category_name = $dom->find('.product-category-name')[0];
-        $product_category_description = $dom->find('.product-category-description')[0];
-        $product_category_status = $dom->find('.product-category-status')[0];
-
-
-        Assert::expect($product_category_name->plaintext)->to_include_string("Test");
-        Assert::expect($product_category_description)->to_include_string("jakis opis");
-        Assert::expect($product_category_status)->to_include_string("active");
-        Assert::expect($response->http_code)->to_equal(200);
-    }
-
     public function testUpdate()
     {
         ProductCategoryFactory::populateProductCategoryTable();
@@ -123,8 +105,8 @@ class ProductCategoryRequestsTest extends TesterCase
 
         $token = null;
 
-        $crawler = $client->setHeader('TesterTestRequestBKT', 'true')->request('GET', Config::get('web_address').'/panel/product-categories/1');
-        $crawler = $client->click($crawler->filter('.update')->link());
+        $crawler = $client->setHeader('TesterTestRequestBKT', 'true')->request('GET', Config::get('web_address').'/panel/product-categories/1/edit');
+        // $crawler = $client->click($crawler->filter('.update')->link());
         // select the form and fill in some values
         $form = $crawler->filter('.submit')->form();
         $crawler = $client->submit($form, array('product_category[name]' => '', 'product_category[description]' => 'xxxxxx'));
@@ -142,8 +124,8 @@ class ProductCategoryRequestsTest extends TesterCase
 
       $token = null;
 
-      $crawler = $client->setHeader('TesterTestRequestBKT', 'true')->request('GET', Config::get('web_address').'/panel/product-categories/1');
-      $form = $crawler->filter('.submit')->form();
+      $crawler = $client->setHeader('TesterTestRequestBKT', 'true')->request('GET', Config::get('web_address').'/panel/product-categories/1/edit');
+      $form = $crawler->filter('.delete')->form();
       $crawler = $client->submit($form, array());
 
       $product_categories_count = count(ProductCategory::all());
